@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # Prepara chamada
     valor1 = input("Digite o primeiro valor:")
     valor2 = input("Digite o segundo valor:")
-    url = f"http://127.0.0.1:8080/soma?p1={valor1}&p2={valor2}"
+    url = f"http://127.0.0.1:8080/div?p1={valor1}&p2={valor2}"
     headers = {'Content-Type': 'application/json'}
 
     #Chama API
