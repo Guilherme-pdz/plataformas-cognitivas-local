@@ -8,7 +8,7 @@ import pandas as pd
 if __name__ == "__main__":
     # Carrega os dados
     mydf = pd.read_csv('../../datasets/BaseUnknown03.csv')
-    mydf = mydf.drop("etnia", axis=1)
+    mydf.drop(columns=["etnia"], axis=1, inplace=True)
 
     # Filtra alguns para testes:
     filtrados = mydf.sample(4)

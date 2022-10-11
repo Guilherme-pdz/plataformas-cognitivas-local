@@ -66,8 +66,13 @@ def call_modelo02(request = request):
             campos[col] = 0
     x = campos[modelo02.independentcols]
 
-    prediction = modelo02.predict(x)
-    predict_proba = modelo02.predict_proba(x)
+    prediction = []
+    for y in modelo02.predict(x):
+        if y > 0.5:
+            prediction.append(1)
+        else:
+            prediction.append(0)
+    predict_proba = modelo02.predict(x)
 
     ret = json.dumps({'prediction': list(prediction),
                       'proba': list(predict_proba)}, cls=NpEncoder)
